@@ -6,10 +6,10 @@
     <title>Kumpulan Hikmah Pesantren Kilat - Taqi Zaidan Rafif</title>
     <style>
         :root {
-            --primary-color: #2c3e50; /* Biru tua pekat */
-            --secondary-color: #16a085; /* Hijau toska lembut */
-            --accent-color: #5faee3; /* Biru muda cerah */
-            --hover-color: #128f76; /* Hijau tua untuk hover */
+            --primary-color: #2c3e50;
+            --secondary-color: #16a085;
+            --accent-color: #5faee3;
+            --hover-color: #128f76;
         }
 
         body {
@@ -17,7 +17,80 @@
             margin: 20px;
             padding: 0;
             background-color: #f5f5f5;
-            color: #2c3e50;
+            color: var(--primary-color);
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 2px solid var(--secondary-color);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: var(--hover-color);
+        }
+
+        .day-indicator {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            border-top-left-radius: 13px;
+            border-top-right-radius: 13px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .content p {
+            color: #34495e;
+            margin: 15px 0;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto 0;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            padding: 10px;
+            border-radius: 25px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, var(--hover-color), var(--secondary-color));
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         header {
@@ -37,70 +110,17 @@
 
         header p {
             color: rgba(255,255,255,0.8);
-            margin: 8px 0 0;
+            margin: 10px 0 0;
         }
 
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid var(--secondary-color);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            border-color: var(--hover-color);
-        }
-
-        .card h2 {
-            color: var(--primary-color);
-            font-size: 1.5em;
-            margin: 0 0 15px;
-        }
-
-        .card p {
-            color: #34495e;
-            margin: 0 0 15px;
-            line-height: 1.6;
-        }
-
-        .button {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            color: white;
-            padding: 10px 25px;
-            border-radius: 25px;
-            display: inline-block;
-            margin-top: 15px;
-            transition: 0.3s ease;
-            font-weight: bold;
-        }
-
-        .button:hover {
-            background: linear-gradient(135deg, var(--hover-color), var(--secondary-color));
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Responsif untuk mobile */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
+            .day-indicator {
+                padding: 10px;
+                font-size: 0.9em;
             }
             
-            .card {
-                padding: 20px;
+            .content h2 {
+                font-size: 1.3em;
             }
         }
     </style>
@@ -113,28 +133,24 @@
 
     <div class="card-container">
         <a href="Tauhid.html" class="card">
-            <h2>Hari ke-1: 📌 Pemahaman Dasar Tauhid & Bahaya Syirik</h2>
-            <p>Materi esensial tentang konsep tauhid dalam Islam meliputi rububiyyah, uluhiyyah, dan asmaul husna. Menjelaskan bahaya syirik yang mengancam keimanan dan konsekuensinya dalam kehidupan sehari-hari.</p>
-            <span class="button">Baca Materi</span>
+            <div class="day-indicator">Hari ke-1</div>
+            <div class="content">
+                <h2>📌 Pemahaman Dasar Tauhid</h2>
+                <p>Penjelasan lengkap tentang konsep tauhid (rububiyyah, uluhiyyah, asmaul husna) dan bahaya syirik dalam kehidupan beragama. Membahas konsekuensi syirik yang mengancam keimanan dan praktik keagamaan sehari-hari.</p>
+                <span class="button">Baca Materi</span>
+            </div>
         </a>
 
         <a href="Motivasi.html" class="card">
-            <h2>Hari ke-2: 💪 Motivasi Tanpa Batas & 📖 Tilawah Al-Qur'an</h2>
-            <p>Materi kombinasi antara strategi membangun motivasi tak terbatas dengan keutamaan membaca Al-Qur'an. Menjelaskan teknik "5 Mengapa" untuk menemukan tujuan hidup dan urgensi tilawah sebagai penyejuk hati di dunia-akhirat.</p>
-            <span class="button">Baca Materi</span>
+            <div class="day-indicator">Hari ke-2</div>
+            <div class="content">
+                <h2>💪 Motivasi Tanpa Batas & 📖 Tilawah</h2>
+                <p>Kombinasi strategi membangun motivasi tak terbatas dengan keutamaan membaca Al-Qur'an sebagai penyejuk hati. Membahas teknik "5 Mengapa" untuk menemukan tujuan hidup dan urgensi tilawah.</p>
+                <span class="button">Baca Materi</span>
+            </div>
         </a>
-
-        <a href="akhlaq-muslim.html" class="card">
-            <h2>Akhlaq Muslim</h2>
-            <p>Adab pergaulan dalam Islam dan implementasinya sehari-hari</p>
-            <span class="button">Baca Materi</span>
-        </a>
-
-        <a href="keutamaan-puasa.html" class="card">
-            <h2>Keutamaan Puasa</h2>
-            <p>Rahasia dibalik ibadah puasa dalam membentuk karakter mulia</p>
-            <span class="button">Baca Materi</span>
-        </a>
+        
+        <!-- Tambahkan kartu materi lainnya di sini -->
     </div>
 </body>
 </html>
